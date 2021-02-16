@@ -1,0 +1,114 @@
+/*-------------------------
+*  Grid
+*--------------------------*/
+$columns: 12;
+$gutter: 10px;
+$spacing: 20;
+
+/*-------------------------
+*  Spacing
+*--------------------------*/
+$paddings: (
+  "pt": "padding-top",
+  "pr": "padding-right",
+  "pb": "padding-bottom",
+  "pl": "padding-left",
+);
+$margins: (
+  "mt": "margin-top",
+  "mr": "margin-right",
+  "mb": "margin-bottom",
+  "ml": "margin-left",
+);
+$page-padding: 5vw;
+
+/*-------------------------
+*  Media Queries
+*--------------------------*/
+$xs: 480px;
+$sm: 600px;
+$md: 800px;
+$lg: 1190px;
+$xl: 1440px;
+$xxl: 1700px;
+
+$breakpoints: (
+  "xs": $xs,
+  "sm": $sm,
+  "md": $md,
+  "lg": $lg,
+  "xl": $xl,
+);
+
+/*-------------------------
+*  Gradients
+*--------------------------*/
+$light-pink: linear-gradient(-225deg, #ffe29f 0%, #ffa99f 48%, #ff719a 100%);
+$pink: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+$green: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+$light-purple: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+$purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$purple-dark: linear-gradient(to top, #5f72bd 0%, #886aea 53%, #6457c6 100%);
+$midnight-bloom: linear-gradient(to top, #2b5876 0%, #4e4376 100%);
+$orange-bloom: linear-gradient(-225deg, #fc6076, #ef9d43, #e75516);
+
+/*-------------------------
+*  Colours
+*--------------------------*/
+$white: #fff;
+$black: #000;
+$light-grey: #f0f0f0;
+$base-color: #5f72bd;
+$svg-color: #000;
+$Dark-Violet: #07123a;
+
+$color-background: #eeeef6;
+$color-background-darker: #f2f1ed;
+$color-background-darkest: #f2f1ed;
+
+$color-accent-dark: #6fb3da;
+$color-accent-darker: darken(#6fb3da, 5%);
+$color-accent-light: #9ac4c2;
+
+$color-main: #58b4de;
+$color-main-lighter: #6fb3da;
+$color-text: #4b5261;
+$color-text-lighter: #555555;
+$color-text-lightest: #616161;
+$color-shadow: #000000;
+$color-border: rgba($color-text, 0.25);
+
+// custom colours
+
+$colours: (
+  "white": $white,
+  "black": $black,
+  "light-grey": $light-grey,
+);
+
+/*-------------------------
+*  Typography
+*--------------------------*/
+// $base-font: Helvetica, Arial, sans-serif;
+$base-font: "Montserrat";
+$sub-font: "Catamaran";
+$base-font: "josefin sans";
+$sub-font: "alata";
+
+$base-fs: 18px;
+
+/*-------------------------
+*  Animations
+*--------------------------*/
+$time: 320ms;
+$time_slow: 700ms;
+
+$swing: cubic-bezier(0.55, 0, 0.1, 1);
+$swift: cubic-bezier(0.4, 0, 0.2, 1);
+$ease: ease;
+
+$transition-default: all $time $ease;
+
+$height-site-header-main: 4rem;
+$section-height: calc(100vh - #{$height-site-header-main});
+$border-radius: 0.25rem;

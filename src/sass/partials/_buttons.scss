@@ -1,0 +1,33 @@
+.plan-button {
+  color: #000;
+  border: 0.1975rem solid black;
+  padding: 0.725rem 2rem;
+  margin-left: 2rem;
+  font-family: "Karla";
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #000;
+    color: #fff !important;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+}
+.plan-button-2 {
+  @extend .plan-button;
+  background-color: $Dark-Violet;
+  border: 0.1475rem solid #fff;
+  padding: 0.825rem 3rem;
+  margin-left: 0;
+  color: #fff;
+}
+.plan-button-2:hover {
+  background-color: #fff;
+  color: $Dark-Violet !important;
+}
+.base-btn {
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
