@@ -1,0 +1,133 @@
+.header {
+  padding: 0 $page-padding;
+  height: 20vh;
+  width: 100vw - ($page-padding * 2);
+  position: fixed;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo-wrapper {
+    a {
+      svg {
+        color: $color-main;
+        width: 4.5rem;
+        margin-bottom: -2rem;
+      }
+    }
+  }
+  .cta-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      display: block;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.2rem;
+      margin-right: 3rem;
+      font-family: $sub-font;
+      color: $color-main;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 2.3rem;
+        left: 0%;
+        transform: scale(1);
+        transform-origin: right;
+        width: 100%;
+        background-color: $color-background-light;
+        height: 0.08rem;
+      }
+    }
+    .slide-vertical {
+      .char {
+        overflow: hidden;
+        color: transparent;
+
+        &::before,
+        &::after {
+          visibility: visible;
+          color: $color-main;
+          transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
+          transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
+        }
+
+        &::before {
+          transition-delay: calc(0.02s * (var(--char-index)));
+        }
+      }
+
+      &:hover .char::before {
+        transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
+      }
+      &:hover .char::after {
+        transition-delay: calc(0.02s * (var(--char-index)));
+      }
+    }
+
+    .slide-vertical {
+      .char::before {
+        transform: translateY(-100%);
+      }
+      &:hover .char::before {
+        transform: translateY(0%);
+      }
+      &:hover .char::after {
+        transform: translateY(100%);
+      }
+    }
+    .menu {
+      height: $menu-size;
+      width: $menu-size;
+      background-color: $color-background-light;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+
+      .menu-bar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        align-items: flex-end;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .bar {
+          width: 1.7rem;
+          height: 0.1rem;
+          background: black;
+          margin-bottom: 0.3rem;
+        }
+        .bar-2 {
+          width: 70%;
+        }
+      }
+    }
+    .overlay {
+      height: 25rem;
+      z-index: -1;
+      width: 25rem;
+      background-color: $color-background-light;
+      position: fixed;
+      right: -2rem;
+      top: -4rem;
+      transform: scale(0);
+      border-radius: 50%;
+    }
+  }
+}
+.is-black {
+  &::after,
+  &::before {
+    color: $color-background !important;
+  }
+}
+.black::after {
+  background-color: $color-background !important;
+}
+.black-logo {
+  color: $color-background !important;
+}

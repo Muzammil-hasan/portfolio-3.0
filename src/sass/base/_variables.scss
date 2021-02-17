@@ -55,46 +55,17 @@ $orange-bloom: linear-gradient(-225deg, #fc6076, #ef9d43, #e75516);
 /*-------------------------
 *  Colours
 *--------------------------*/
-$white: #fff;
-$black: #000;
-$light-grey: #f0f0f0;
-$base-color: #5f72bd;
-$svg-color: #000;
-$Dark-Violet: #07123a;
 
-$color-background: #eeeef6;
-$color-background-darker: #f2f1ed;
-$color-background-darkest: #f2f1ed;
-
-$color-accent-dark: #6fb3da;
-$color-accent-darker: darken(#6fb3da, 5%);
-$color-accent-light: #9ac4c2;
-
-$color-main: #58b4de;
-$color-main-lighter: #6fb3da;
-$color-text: #4b5261;
-$color-text-lighter: #555555;
-$color-text-lightest: #616161;
-$color-shadow: #000000;
-$color-border: rgba($color-text, 0.25);
-
-// custom colours
-
-$colours: (
-  "white": $white,
-  "black": $black,
-  "light-grey": $light-grey,
-);
+$color-background: #171717;
+$color-background-light: #fff;
+$color-main: #fff;
+$color-main-lighter: #ededed;
 
 /*-------------------------
 *  Typography
 *--------------------------*/
-// $base-font: Helvetica, Arial, sans-serif;
-$base-font: "Montserrat";
-$sub-font: "Catamaran";
-$base-font: "josefin sans";
-$sub-font: "alata";
-
+$main-font: "Montserrat", sans-serif;
+$sub-font: "Poppins", sans-serif;
 $base-fs: 18px;
 
 /*-------------------------
@@ -112,3 +83,8 @@ $transition-default: all $time $ease;
 $height-site-header-main: 4rem;
 $section-height: calc(100vh - #{$height-site-header-main});
 $border-radius: 0.25rem;
+
+/*-------------------------
+*  Menu size
+*--------------------------*/
+$menu-size: 3.3rem;

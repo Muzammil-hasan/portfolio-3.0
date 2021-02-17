@@ -16,7 +16,7 @@
 }
 .plan-button-2 {
   @extend .plan-button;
-  background-color: $Dark-Violet;
+  background-color: blue;
   border: 0.1475rem solid #fff;
   padding: 0.825rem 3rem;
   margin-left: 0;
@@ -24,7 +24,7 @@
 }
 .plan-button-2:hover {
   background-color: #fff;
-  color: $Dark-Violet !important;
+  color: blue !important;
 }
 .base-btn {
   background-color: inherit;
