@@ -4,11 +4,12 @@ body {
   background-color: $color-background;
   color: $color-main;
   font-family: $main-font;
-  // cursor: none;
+  overflow-x: hidden;
+  // cursor: none !important;
 }
 .cursor {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border: 1px solid white;
   border-radius: 50%;
   position: absolute;
@@ -16,16 +17,17 @@ body {
   transition-timing-function: ease-out;
   animation: cursorAnim 0.5s infinite alternate;
   pointer-events: none;
+  z-index: 99;
   &::after {
     content: "";
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     position: absolute;
-    border: 8px solid gray;
+    border: 0.5rem solid gray;
     border-radius: 50%;
     opacity: 0.5;
-    top: -8px;
-    left: -8px;
+    top: -0.5rem;
+    left: -0.5rem;
     animation: cursorAnim2 0.5s infinite alternate;
   }
   @keyframes cursorAnim {
@@ -36,23 +38,17 @@ body {
       transform: scale(0.7);
     }
   }
-
-  @keyframes cursorAnim3 {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(8);
-    }
-    100% {
-      transform: scale(1);
-      opacity: 0;
-    }
-  }
 }
 .expand {
-  animation: cursorAnim3 0.5s forwards;
-  border: 1px solid red;
+  border: none;
+  &::after {
+    border: none;
+    background-color: gray;
+    width: 6rem;
+    height: 6rem;
+    top: -1rem;
+    left: -1rem;
+  }
 }
 a {
   text-decoration: none;

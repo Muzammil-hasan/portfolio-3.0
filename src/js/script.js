@@ -1,10 +1,16 @@
 /* ##################################### */
+/* Splitting Text */
+/* ##################################### */
+
+Splitting();
+
+/* ##################################### */
 /* Menu Animation */
 /* ##################################### */
 
 const html = document.documentElement;
 const overlay = document.querySelector(".overlay");
-const menu = document.querySelector(".menu");
+let hamburger = document.querySelector(".hamburger");
 const overlayWidth = overlay.clientWidth;
 let menuTl = gsap.timeline();
 menuTl.reversed(true);
@@ -21,80 +27,19 @@ const getVpdr = () => {
 
 /* Overlay size if Resized */
 
-window.onresize = () => {
-  gsap.to(".overlay", {
-    scale: getVpdr(),
-    ease: Expo.easeInOut,
-    duration: 5,
-  });
-};
-
-menuTl
-  .to(
-    ".overlay",
-    {
-      duration: 0.8,
-      scale: getVpdr(),
-      ease: Power2.easeInOut,
-    },
-    "menuBar"
-  )
-  .to(
-    ".bar-1",
-    {
-      rotation: -45,
-      ease: Power2.easeInOut,
-      duration: 0.3,
-      top: "1.2rem",
-      y: 9,
-      backgroundColor: "#fff",
-    },
-    "menuBar"
-  )
-  .to(
-    ".bar-2",
-    {
-      width: 0,
-      opacity: 0,
-      transformOrigin: "center",
-      ease: Power2.easeInOut,
-      duration: 0.3,
-    },
-    "menuBar"
-  )
-  .to(
-    ".bar-3",
-    {
-      rotation: 45,
-      ease: Power2.easeInOut,
-      duration: 0.2,
-      top: "1.2rem",
-      y: -0.6,
-      backgroundColor: "#fff",
-    },
-    "menuBar"
-  )
-  .to(
-    ".menu-bar",
-    {
-      top: "46%",
-      duration: 0.2,
-    },
-    "menuBar"
-  )
-  .to(
-    ".menu",
-    {
-      backgroundColor: "#000",
-    },
-    "menuBar"
-  );
+menuTl.to(".overlay", {
+  duration: 1.5,
+  scale: getVpdr(),
+  ease: Power4.easeInOut,
+});
 
 function overlayExpand() {
   menuTl.reversed(!menuTl.reversed());
 }
 
-menu.addEventListener("click", () => {
+hamburger.addEventListener("click", () => {
+  expanded = !expanded;
+  hamburger.classList.toggle("is-active");
   overlayExpand();
   let cta = document.querySelector(".cta-wrapper a");
   let chars = document.querySelectorAll(".char");
@@ -104,45 +49,39 @@ menu.addEventListener("click", () => {
   }
   cta.classList.toggle("black");
   logo.classList.toggle("black-logo");
-});
-menu.addEventListener("mouseover", () => {
-  gsap.to(".bar-2", {
-    width: "1.7rem",
-    ease: Expo.easeOut,
-  });
-});
-menu.addEventListener("mouseleave", () => {
-  gsap.to(".bar-2", {
-    width: "70%",
-    ease: Expo.easeOut,
-  });
+  // if (hamburger.classList.contains("is-active")) {
+  //   window.onresize = () => {
+  //     gsap.to(".overlay", {
+  //       scale: getVpdr(),
+  //       ease: Expo.easeInOut,
+  //       duration: 1.5,
+  //     });
+  //   };
+  // } else {
+  // }
 });
 
 /* ##################################### */
 /* Cursor Animation */
 /* ##################################### */
 
-// const cursor = document.querySelector(".cursor");
+const cursor = document.querySelector(".cursor");
+const links = document.querySelectorAll("a");
+for (const link of links) {
+  link.addEventListener("mouseover", () => {
+    cursor.classList.add("expand");
+  });
+  link.addEventListener("mouseleave", () => {
+    cursor.classList.remove("expand");
+  });
+}
 
-// document.addEventListener("mousemove", (e) => {
-//   cursor.setAttribute(
-//     "style",
-//     "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
-//   );
-// });
-
-// document.addEventListener("click", () => {
-//   cursor.classList.add("expand");
-
-//   setTimeout(() => {
-//     cursor.classList.remove("expand");
-//   }, 500);
-// });
-
-// gsap.from(".menu-bar", {
-//   x: 100,
-//   opacity: 0,
-// });
+document.addEventListener("mousemove", (e) => {
+  cursor.setAttribute(
+    "style",
+    "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+  );
+});
 
 /* ##################################### */
 /* !Cursor Animation */
