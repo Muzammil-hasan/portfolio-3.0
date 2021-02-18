@@ -16,18 +16,18 @@ const getVpdr = () => {
   const vph = Math.pow(html.offsetHeight, 2); // Height
   const vpw = Math.pow(html.offsetWidth, 2); // Width
   const vpd = Math.sqrt(vph + vpw); // Diagonal
-  return (vpd * 2) / overlayWidth; // Circle radius
+  return (vpd * 3.5) / overlayWidth; // Circle radius
 };
 
 /* Overlay size if Resized */
 
-// window.onresize = () => {
-//   gsap.to(".overlay", {
-//     scale: getVpdr(),
-//     ease: Expo.easeInOut,
-//     duration: 5,
-//   });
-// };
+window.onresize = () => {
+  gsap.to(".overlay", {
+    scale: getVpdr(),
+    ease: Expo.easeInOut,
+    duration: 5,
+  });
+};
 
 menuTl
   .to(
@@ -44,7 +44,7 @@ menuTl
     {
       rotation: -45,
       ease: Power2.easeInOut,
-      duration: 0.2,
+      duration: 0.3,
       top: "1.2rem",
       y: 9,
       backgroundColor: "#fff",
@@ -58,7 +58,7 @@ menuTl
       opacity: 0,
       transformOrigin: "center",
       ease: Power2.easeInOut,
-      duration: 0.2,
+      duration: 0.3,
     },
     "menuBar"
   )
