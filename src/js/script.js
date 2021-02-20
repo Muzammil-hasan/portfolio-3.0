@@ -25,13 +25,50 @@ const getVpdr = () => {
   return (vpd * 3.5) / overlayWidth; // Circle radius
 };
 
-/* Overlay size if Resized */
-
-menuTl.to(".overlay", {
-  duration: 1.5,
-  scale: getVpdr(),
-  ease: Power4.easeInOut,
-});
+menuTl
+  .to(".overlay", {
+    duration: 1.2,
+    scale: getVpdr(),
+    ease: Elastic.Out,
+  })
+  .to(
+    ".logo-path",
+    {
+      color: "black",
+    },
+    "-=1"
+  )
+  .to(
+    ".main-nav",
+    {
+      display: "block",
+    },
+    "-=1"
+  )
+  .to(
+    ".social-links",
+    {
+      display: "block",
+    },
+    "-=.8"
+  )
+  .to(
+    ".menu-indicator",
+    {
+      display: "block",
+    },
+    "-=.8"
+  )
+  .from(
+    ".main-nav ul li",
+    {
+      x: -100,
+      opacity: 0,
+      stagger: 0.1,
+      ease: Power2.easeOut,
+    },
+    "-=1"
+  );
 
 function overlayExpand() {
   menuTl.reversed(!menuTl.reversed());
@@ -48,19 +85,21 @@ hamburger.addEventListener("click", () => {
     char.classList.toggle("is-black");
   }
   cta.classList.toggle("black");
-  logo.classList.toggle("black-logo");
-  // if (hamburger.classList.contains("is-active")) {
-  //   window.onresize = () => {
-  //     gsap.to(".overlay", {
-  //       scale: getVpdr(),
-  //       ease: Expo.easeInOut,
-  //       duration: 1.5,
-  //     });
-  //   };
-  // } else {
-  // }
+  cursor.classList.toggle("bg-black");
 });
 
+/* Overlay size if Resized */
+
+// if (hamburger.classList.contains("is-active")) {
+//   window.onresize = () => {
+//     gsap.to(".overlay", {
+//       scale: getVpdr(),
+//       ease: Expo.easeInOut,
+//       duration: 1.5,
+//     });
+//   };
+// } else {
+// }
 /* ##################################### */
 /* Cursor Animation */
 /* ##################################### */
@@ -68,7 +107,7 @@ hamburger.addEventListener("click", () => {
 const cursor = document.querySelector(".cursor");
 const links = document.querySelectorAll("a");
 for (const link of links) {
-  link.addEventListener("mouseover", () => {
+  link.addEventListener("mousemove", () => {
     cursor.classList.add("expand");
   });
   link.addEventListener("mouseleave", () => {
@@ -84,5 +123,5 @@ document.addEventListener("mousemove", (e) => {
 });
 
 /* ##################################### */
-/* !Cursor Animation */
+/* Moving Hamburger */
 /* ##################################### */

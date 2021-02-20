@@ -5,53 +5,27 @@ body {
   color: $color-main;
   font-family: $main-font;
   overflow-x: hidden;
-  // cursor: none !important;
 }
 .cursor {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid white;
-  border-radius: 50%;
-  position: absolute;
-  transition-duration: 150ms;
-  transition-timing-function: ease-out;
-  animation: cursorAnim 0.5s infinite alternate;
   pointer-events: none;
+  position: fixed;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 1s ease;
+  transition-duration: 150ms;
   z-index: 99;
-  &::after {
-    content: "";
-    width: 2.5rem;
-    height: 2.5rem;
-    position: absolute;
-    border: 0.5rem solid gray;
-    border-radius: 50%;
-    opacity: 0.5;
-    top: -0.5rem;
-    left: -0.5rem;
-    animation: cursorAnim2 0.5s infinite alternate;
-  }
-  @keyframes cursorAnim {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(0.7);
-    }
-  }
 }
+
 .expand {
-  border: none;
-  &::after {
-    border: none;
-    background-color: gray;
-    width: 6rem;
-    height: 6rem;
-    top: -1rem;
-    left: -1rem;
-  }
+  transform: translate(-50%, -50%) scale(8);
+  opacity: 0.2;
 }
+
 a {
   text-decoration: none;
+  cursor: none;
 }
 
 li {
@@ -59,5 +33,6 @@ li {
 }
 
 ul {
-  margin-right: 0;
+  margin: 0;
+  padding: 0;
 }
