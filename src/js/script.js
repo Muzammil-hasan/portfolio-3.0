@@ -27,7 +27,7 @@ const getVpdr = () => {
 
 menuTl
   .to(".overlay", {
-    duration: 1.2,
+    duration: 1.5,
     scale: getVpdr(),
     ease: Elastic.Out,
   })
@@ -63,6 +63,16 @@ menuTl
     ".main-nav ul li",
     {
       x: -100,
+      opacity: 0,
+      stagger: 0.1,
+      ease: Power2.easeOut,
+    },
+    "-=1"
+  )
+  .from(
+    ".social-links ul li",
+    {
+      yPercent: 100,
       opacity: 0,
       stagger: 0.1,
       ease: Power2.easeOut,
@@ -123,5 +133,28 @@ document.addEventListener("mousemove", (e) => {
 });
 
 /* ##################################### */
-/* Moving Hamburger */
+/* Header Animations */
 /* ##################################### */
+
+// let headerAnim = new gsap.timeline();
+gsap.from(".header", {
+  yPercent: -250,
+  duration: 2,
+  delay: 0.5,
+  stagger: 0.5,
+  ease: Expo.easeOut,
+  opacity: 0,
+});
+
+/* ##################################### */
+/* Hero Section Animations */
+/* ##################################### */
+
+let heroAnim = new gsap.timeline();
+heroAnim.from(".hero", {
+  xPercent: -500,
+  duration: 2,
+  ease: Expo.easeOut,
+  opacity: 0,
+  delay: 0.5,
+});

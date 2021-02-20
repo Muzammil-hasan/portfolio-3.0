@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
   .logo-wrapper {
     a {
       svg {
@@ -100,7 +101,6 @@
     }
 
     .hamburger {
-      cursor: pointer;
       background-color: #fff;
       border-radius: 50%;
       width: 3.125rem;
@@ -213,7 +213,7 @@
 
             &:before,
             .char {
-              transition: transform 0.8s cubic-bezier(0.75, 0, 0.24, 0.98);
+              transition: transform 0.5s cubic-bezier(0.75, 0, 0.24, 0.98);
               transition-delay: calc(0.015s * var(--char-index));
             }
 

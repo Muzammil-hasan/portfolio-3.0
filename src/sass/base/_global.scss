@@ -1,7 +1,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  background-color: $color-background;
+  // background-color: $color-background;
   color: $color-main;
   font-family: $main-font;
   overflow-x: hidden;
@@ -9,17 +9,17 @@ body {
 .cursor {
   pointer-events: none;
   position: fixed;
-  padding: 0.5rem;
+  padding: 0.7rem;
   background-color: #fff;
   border-radius: 50%;
   mix-blend-mode: difference;
   transition: transform 1s ease;
-  transition-duration: 150ms;
+  transition-duration: 0.3s;
   z-index: 99;
 }
 
 .expand {
-  transform: translate(-50%, -50%) scale(8);
+  transform: translate(-50%, -50%) scale(6);
   opacity: 0.2;
 }
 
