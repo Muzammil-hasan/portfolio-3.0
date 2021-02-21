@@ -21,6 +21,7 @@ $margins: (
   "ml": "margin-left",
 );
 $page-padding: 5vw;
+$content-padding: 0 0 0 5vw;
 
 /*-------------------------
 *  Media Queries
@@ -66,6 +67,7 @@ $color-main-lighter: #ededed;
 *--------------------------*/
 $main-font: "Montserrat", sans-serif;
 $sub-font: "Poppins", sans-serif;
+$base-font: "Josefin Sans", sans-serif;
 $base-fs: 18px;
 
 /*-------------------------

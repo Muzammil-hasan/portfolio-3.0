@@ -97,7 +97,12 @@ hamburger.addEventListener("click", () => {
   cta.classList.toggle("black");
   cursor.classList.toggle("bg-black");
 });
-
+hamburger.addEventListener("mouseover", () => {
+  cursor.classList.add("hide");
+});
+hamburger.addEventListener("mouseleave", () => {
+  cursor.classList.remove("hide");
+});
 /* Overlay size if Resized */
 
 // if (hamburger.classList.contains("is-active")) {
@@ -111,9 +116,9 @@ hamburger.addEventListener("click", () => {
 // } else {
 // }
 /* ##################################### */
-/* Cursor Animation */
+/* Cursor Animation && Global */
 /* ##################################### */
-
+let scrollIndicator = document.querySelectorAll(".scroll .char");
 const cursor = document.querySelector(".cursor");
 const links = document.querySelectorAll("a");
 for (const link of links) {
@@ -132,15 +137,22 @@ document.addEventListener("mousemove", (e) => {
   );
 });
 
+gsap.from(scrollIndicator, {
+  xPercent: -60,
+  duration: 1,
+  delay: 2,
+  opacity: 0,
+  ease: "elastic.out(1, 0.5)",
+  stagger: 0.03,
+});
 /* ##################################### */
 /* Header Animations */
 /* ##################################### */
 
-// let headerAnim = new gsap.timeline();
 gsap.from(".header", {
   yPercent: -250,
   duration: 2,
-  delay: 0.5,
+  delay: 1,
   stagger: 0.5,
   ease: Expo.easeOut,
   opacity: 0,
@@ -151,10 +163,42 @@ gsap.from(".header", {
 /* ##################################### */
 
 let heroAnim = new gsap.timeline();
-heroAnim.from(".hero", {
-  xPercent: -500,
-  duration: 2,
-  ease: Expo.easeOut,
-  opacity: 0,
-  delay: 0.5,
-});
+let nameChars = document.querySelectorAll(".name .char");
+let titleChars = document.querySelectorAll(".title .char");
+heroAnim
+  .from(".hero", {
+    xPercent: -500,
+    duration: 1.5,
+    ease: Power1.out,
+    opacity: 0,
+    delay: 0.5,
+  })
+  .from(nameChars, {
+    xPercent: -60,
+    duration: 1,
+    opacity: 0,
+    ease: "elastic.out(1, 0.5)",
+    stagger: 0.05,
+  })
+  .from(
+    titleChars,
+    {
+      y: 60,
+      duration: 0.4,
+      opacity: 0,
+      scale: 0,
+      ease: Power2.easeOut,
+      stagger: 0.04,
+    },
+    "-=1.5"
+  )
+  .from(
+    ".subtitle",
+    {
+      yPercent: 60,
+      duration: 0.5,
+      opacity: 0,
+      ease: Power2.easeOut,
+    },
+    "-=1"
+  );

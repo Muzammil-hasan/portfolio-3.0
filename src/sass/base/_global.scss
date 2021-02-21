@@ -1,9 +1,10 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  // background-color: $color-background;
   color: $color-main;
+  height: 500vh;
   font-family: $main-font;
+  position: relative;
   overflow-x: hidden;
 }
 .cursor {
@@ -17,12 +18,65 @@ body {
   transition-duration: 0.3s;
   z-index: 99;
 }
-
+.scroll {
+  position: fixed;
+  background-color: transparent;
+  font-family: $sub-font;
+  text-transform: uppercase;
+  right: 3.4vw;
+  bottom: 10rem;
+  z-index: 99;
+  font-size: 0.9rem;
+  color: $color-main-lighter;
+  letter-spacing: 0.5rem;
+  transform: rotate(90deg);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -6rem;
+    width: 5rem;
+    transform: translateY(-50%);
+    background-color: #fff;
+    height: 0.1rem;
+    transform-origin: left;
+    animation: slideIn 2s 1 alternate;
+    animation-delay: 1.5s;
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-50%) scale(0);
+      -webkit-transform: translateY(-50%) scale(0);
+      -ms-transform: translateY(-50%) scale(0);
+      -o-transform: translateY(-50%) scale(0);
+    }
+    100% {
+      transform: translateY(-50%) scale(1);
+      -webkit-transform: translateY(-50%) scale(1);
+      -ms-transform: translateY(-50%) scale(1);
+      -o-transform: translateY(-50%) scale(1);
+    }
+  }
+}
 .expand {
   transform: translate(-50%, -50%) scale(6);
   opacity: 0.2;
 }
-
+.hide {
+  display: none;
+  opacity: 0;
+}
+.muzammil {
+  z-index: 1;
+  position: absolute;
+  background-image: url(/dist/images/MUZAMMIL.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 0;
+  left: 60%;
+  height: 100%;
+  width: 25rem;
+}
 a {
   text-decoration: none;
   cursor: none;
