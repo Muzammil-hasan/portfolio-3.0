@@ -29,7 +29,8 @@ menuTl
   .to(".overlay", {
     duration: 1.5,
     scale: getVpdr(),
-    ease: Elastic.Out,
+
+    ease: Power3.easeInOut,
   })
   .to(
     ".logo-path",
