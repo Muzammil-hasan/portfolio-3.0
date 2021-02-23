@@ -57,10 +57,12 @@ $orange-bloom: linear-gradient(-225deg, #fc6076, #ef9d43, #e75516);
 *  Colours
 *--------------------------*/
 
-$color-background: #171717;
-$color-background-light: #fff;
-$color-main: #fff;
-$color-main-lighter: #ededed;
+$color-background: hsl(0, 0%, 9%);
+$color-background-light: hsl(0, 0%, 100%);
+$color-main: hsl(0, 0%, 100%);
+$color-main-lighter: hsl(0, 0%, 93%);
+$blue-color: hsl(180, 50%, 82%);
+$light-gray: hsl(0, 0%, 15%);
 
 /*-------------------------
 *  Typography

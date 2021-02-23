@@ -35,7 +35,7 @@ menuTl
   .to(
     ".logo-path",
     {
-      color: "black",
+      color: "#171717",
     },
     "-=1"
   )
@@ -99,10 +99,10 @@ hamburger.addEventListener("click", () => {
   cursor.classList.toggle("bg-black");
 });
 hamburger.addEventListener("mouseover", () => {
-  cursor.classList.add("hide");
+  cursor.classList.add("expand");
 });
 hamburger.addEventListener("mouseleave", () => {
-  cursor.classList.remove("hide");
+  cursor.classList.remove("expand");
 });
 /* Overlay size if Resized */
 
@@ -165,7 +165,9 @@ gsap.from(".header", {
 
 let heroAnim = new gsap.timeline();
 let nameChars = document.querySelectorAll(".name .char");
-let titleChars = document.querySelectorAll(".title .char");
+let titleChars = document.querySelectorAll(".title .word");
+let ellipse = document.querySelector(".ellipse");
+let cta = document.querySelector(".cta");
 heroAnim
   .from(".hero", {
     xPercent: -500,
@@ -182,14 +184,13 @@ heroAnim
     stagger: 0.05,
   })
   .from(
-    titleChars,
+    ".line span",
     {
-      y: 60,
-      duration: 0.4,
-      opacity: 0,
-      scale: 0,
-      ease: Power2.easeOut,
-      stagger: 0.04,
+      y: 400,
+      duration: 1.5,
+      ease: "power4.out",
+      skewY: 10,
+      stagger: 0.2,
     },
     "-=1.5"
   )
@@ -202,4 +203,42 @@ heroAnim
       ease: Power2.easeOut,
     },
     "-=1"
+  )
+  .from(
+    ".ellipse",
+    {
+      xPercent: -50,
+      opacity: 0,
+      scale: 0,
+      duration: 1,
+      ease: Power2.easeIn,
+      transformOrigin: "center",
+    },
+    "-=1.5"
+  )
+  .from(
+    ".cta a",
+    {
+      xPercent: -50,
+      opacity: 0,
+      duration: 1,
+      ease: Power2.easeIn,
+      transformOrigin: "center",
+    },
+    "-=1.2"
   );
+
+cta.addEventListener("mouseover", () => {
+  gsap.to(ellipse, {
+    width: "14.5rem",
+    duration: 0.1,
+    ease: Power2.easeIn,
+  });
+});
+cta.addEventListener("mouseleave", () => {
+  gsap.to(ellipse, {
+    width: "4rem",
+    duration: 0.1,
+    ease: Power2.easeIn,
+  });
+});

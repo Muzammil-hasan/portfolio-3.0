@@ -11,7 +11,7 @@ body {
   pointer-events: none;
   position: fixed;
   padding: 0.7rem;
-  background-color: #fff;
+  background-color: $color-main;
   border-radius: 50%;
   mix-blend-mode: difference;
   transition: transform 1s ease;
@@ -25,7 +25,7 @@ body {
   text-transform: uppercase;
   right: 3.4vw;
   bottom: 10rem;
-  z-index: 99;
+  z-index: 1;
   font-size: 0.9rem;
   color: $color-main-lighter;
   letter-spacing: 0.5rem;
@@ -37,7 +37,7 @@ body {
     left: -6rem;
     width: 5rem;
     transform: translateY(-50%);
-    background-color: #fff;
+    background-color: $color-main;
     height: 0.1rem;
     transform-origin: left;
     animation: slideIn 2s 1 alternate;
@@ -59,23 +59,12 @@ body {
   }
 }
 .expand {
-  transform: translate(-50%, -50%) scale(6);
+  transform: translate(-50%, -50%) scale(5);
   opacity: 0.2;
 }
 .hide {
   display: none;
   opacity: 0;
-}
-.muzammil {
-  z-index: 1;
-  position: absolute;
-  background-image: url(/dist/images/MUZAMMIL.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: 0;
-  left: 60%;
-  height: 100%;
-  width: 25rem;
 }
 a {
   text-decoration: none;
