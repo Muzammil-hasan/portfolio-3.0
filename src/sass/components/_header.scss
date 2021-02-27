@@ -112,7 +112,7 @@
         position: relative;
         width: 1.5rem;
         top: 0.8rem;
-        height: 0.1rem;
+        height: 0.105rem;
         background-color: $color-background;
         display: block;
         margin: 0.3rem 0.9rem;
@@ -284,4 +284,35 @@
 }
 .black::after {
   background-color: $color-background !important;
+}
+@media (max-width: 500px) {
+  .header {
+    .menu-indicator {
+      top: 15rem;
+      left: 0.5rem;
+    }
+    .social-links {
+      top: 45rem;
+    }
+    .main-nav {
+      top: 20rem;
+      ul {
+        li {
+          margin-bottom: -1rem;
+          a {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+    .cta-wrapper {
+      a {
+        font-size: 1rem;
+        &::after {
+          top: 2rem;
+          height: 0.1rem;
+        }
+      }
+    }
+  }
 }

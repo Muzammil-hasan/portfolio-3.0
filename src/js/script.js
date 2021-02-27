@@ -134,7 +134,7 @@ for (const link of links) {
 document.addEventListener("mousemove", (e) => {
   cursor.setAttribute(
     "style",
-    "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+    "top: " + (e.pageY - 20) + "px; left: " + (e.pageX - 20) + "px;"
   );
 });
 
@@ -167,7 +167,8 @@ let heroAnim = new gsap.timeline();
 let nameChars = document.querySelectorAll(".name .char");
 let titleChars = document.querySelectorAll(".title .word");
 let ellipse = document.querySelector(".ellipse");
-let cta = document.querySelector(".cta");
+let cta = document.querySelector(".cta a");
+let ctaElements = [cta, ellipse];
 heroAnim
   .from(".hero", {
     xPercent: -500,
@@ -187,6 +188,7 @@ heroAnim
     ".line span",
     {
       y: 400,
+      rotate: 30,
       duration: 1.5,
       ease: "power4.out",
       skewY: 10,
@@ -228,17 +230,25 @@ heroAnim
     "-=1.2"
   );
 
-cta.addEventListener("mouseover", () => {
-  gsap.to(ellipse, {
-    width: "14.5rem",
-    duration: 0.1,
-    ease: Power2.easeIn,
+ctaElements.forEach((i) => {
+  i.addEventListener("mouseover", () => {
+    gsap.to(ellipse, {
+      width: "14.5rem",
+      duration: 0.05,
+      ease: Power1.easeIn,
+    });
   });
 });
-cta.addEventListener("mouseleave", () => {
-  gsap.to(ellipse, {
-    width: "4rem",
-    duration: 0.1,
-    ease: Power2.easeIn,
+ctaElements.forEach((i) => {
+  i.addEventListener("mouseleave", () => {
+    gsap.to(ellipse, {
+      width: "4rem",
+      duration: 0.05,
+      ease: Power1.easeIn,
+    });
   });
 });
+
+/* ##################################### */
+/* Projects Section Animations */
+/* ##################################### */

@@ -64,8 +64,8 @@
       align-items: center;
       margin-top: 4rem;
       position: relative;
-      width: 15rem;
       .ellipse {
+        position: relative;
         background-color: $light-gray;
         border-radius: 3rem;
         width: 4rem;
@@ -90,6 +90,35 @@
   .hero {
     .content {
       padding-top: 10rem;
+    }
+  }
+}
+@media (max-width: 500px) {
+  // body {
+  //   .cursor {
+  //     display: none;
+  //   }
+  // }
+  .hero {
+    .content {
+      padding: 0;
+      padding: 15rem 0 0 2rem;
+      width: 90vw;
+      .name {
+        font-size: 0.9rem;
+      }
+      .title {
+        .line {
+          height: 3rem;
+          span {
+            font-size: 3rem;
+          }
+        }
+      }
+      .subtitle {
+        font-size: 1.2rem;
+        padding-top: 1.5rem;
+      }
     }
   }
 }

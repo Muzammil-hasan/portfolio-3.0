@@ -7,17 +7,17 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-.cursor {
-  pointer-events: none;
-  position: fixed;
-  padding: 0.7rem;
-  background-color: $color-main;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-  transition: transform 1s ease;
-  transition-duration: 0.3s;
-  z-index: 99;
-}
+// .cursor {
+//   pointer-events: none;
+//   position: fixed;
+//   padding: 0.7rem;
+//   background-color: $color-main;
+//   border-radius: 50%;
+//   mix-blend-mode: difference;
+//   transition: transform 1s ease;
+//   transition-duration: 0.3s;
+//   z-index: 99;
+// }
 .scroll {
   position: fixed;
   background-color: transparent;
@@ -58,9 +58,44 @@ body {
     }
   }
 }
+.cursor {
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+  border: 0.05rem solid $color-main;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+  transition-duration: 0.5s;
+  mix-blend-mode: difference;
+}
+
+.cursor::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  position: absolute;
+  background-color: $blue-color;
+  border-radius: 50%;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease;
+  transition-duration: 0.5s;
+}
+
 .expand {
-  transform: translate(-50%, -50%) scale(5);
-  opacity: 0.2;
+  background-color: $color-main;
+  transform: scale(3);
+  border: none;
+  opacity: 0.1;
+  animation: none;
+  &::after {
+    opacity: 0;
+  }
 }
 .hide {
   display: none;
@@ -78,4 +113,10 @@ li {
 ul {
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 500px) {
+  .scroll {
+    bottom: 8rem;
+  }
 }
