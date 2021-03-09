@@ -1,124 +1,135 @@
 .hero {
-  height: 100vh;
-  background-color: $color-background;
-  position: relative;
-  .content {
-    width: 50%;
-    padding-top: 8rem;
-    padding-left: 10rem;
-    overflow: hidden;
+	height: 100vh;
+	background-color: $color-background;
+	position: relative;
+	.content {
+		width: 50%;
+		padding-top: 8rem;
+		padding-left: 10rem;
+		overflow: hidden;
 
-    .name {
-      margin: 0;
-      font-family: $sub-font;
-      text-transform: uppercase;
-      letter-spacing: 0.5rem;
-      font-size: 1.2rem;
-      padding: 4rem 0;
-      transition: none;
-      color: $blue-color;
-      span {
-        &::selection {
-          color: $color-background;
-          background-color: $color-main;
-        }
-      }
-    }
-    .title {
-      padding: $content-padding;
-      margin: 0;
-      line-height: 1;
+		.name {
+			margin: 0;
+			font-family: $sub-font;
+			text-transform: uppercase;
+			letter-spacing: 0.5rem;
+			font-size: 1.2rem;
+			padding: 4rem 0;
+			transition: none;
+			color: $blue-color;
+			span {
+				&::selection {
+					color: $color-background;
+					background-color: $color-main;
+				}
+			}
+		}
+		.title {
+			padding: $content-padding;
+			margin: 0;
+			line-height: 1;
 
-      .line {
-        width: 100%;
-        height: 6rem;
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 1rem;
-        span {
-          font-weight: 700;
-          position: absolute;
-          font-size: 6rem;
-          &::selection {
-            color: $color-background;
-            background-color: $color-main;
-          }
-        }
-      }
-    }
-    .subtitle {
-      color: $color-main-lighter;
-      padding: $content-padding;
-      padding-top: 2rem;
-      font-size: 1.5rem;
-      width: 75%;
-      line-height: 2;
-      &::selection {
-        color: $color-background;
-        background-color: $color-main;
-      }
-    }
-    .cta {
-      padding: $content-padding;
-      display: flex;
-      align-items: center;
-      margin-top: 4rem;
-      position: relative;
-      .ellipse {
-        position: relative;
-        background-color: $light-gray;
-        border-radius: 3rem;
-        width: 4rem;
-        height: 4rem;
-        transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-      }
-      a {
-        font-size: 1rem;
-        color: $color-main;
-        margin: 0;
-        font-family: $sub-font;
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-        font-weight: 500;
-        margin-left: 1.8rem;
-        position: absolute;
-      }
-    }
-  }
+			.line {
+				width: 100%;
+				height: 6rem;
+				position: relative;
+				overflow: hidden;
+				margin-bottom: 1rem;
+				span {
+					font-weight: 700;
+					position: absolute;
+					font-size: 6rem;
+					&::selection {
+						color: $color-background;
+						background-color: $color-main;
+					}
+				}
+			}
+		}
+		.subtitle {
+			color: $color-main-lighter;
+			padding: $content-padding;
+			padding-top: 2rem;
+			font-size: 1.5rem;
+			width: 75%;
+			line-height: 2;
+			&::selection {
+				color: $color-background;
+				background-color: $color-main;
+			}
+		}
+		.cta {
+			padding: $content-padding;
+			display: flex;
+			align-items: center;
+			margin-top: 4rem;
+			position: relative;
+			.ellipse {
+				position: relative;
+				background-color: $light-gray;
+				border-radius: 3rem;
+				width: 4rem;
+				height: 4rem;
+				transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+			}
+			a {
+				font-size: 1rem;
+				color: $color-main;
+				margin: 0;
+				font-family: $sub-font;
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
+				font-weight: 500;
+				margin-left: 1.8rem;
+				position: absolute;
+			}
+		}
+	}
 }
+
+@media (max-width: 3840px) and (min-width: 2560px) {
+	.hero {
+		.content {
+			padding-top: 15rem;
+			padding-left: 15rem;
+		}
+	}
+}
+
 @media (width: 2560px) and (height: 1600px) {
-  .hero {
-    .content {
-      padding-top: 10rem;
-    }
-  }
+	.hero {
+		.content {
+			padding-top: 20rem;
+		}
+	}
 }
+
 @media (max-width: 500px) {
-  // body {
-  //   .cursor {
-  //     display: none;
-  //   }
-  // }
-  .hero {
-    .content {
-      padding: 0;
-      padding: 15rem 0 0 2rem;
-      width: 90vw;
-      .name {
-        font-size: 0.9rem;
-      }
-      .title {
-        .line {
-          height: 3rem;
-          span {
-            font-size: 3rem;
-          }
-        }
-      }
-      .subtitle {
-        font-size: 1.2rem;
-        padding-top: 1.5rem;
-      }
-    }
-  }
+	body {
+		.cursor {
+			display: none;
+		}
+	}
+	.hero {
+		.content {
+			padding: 0;
+			padding: 15rem 0 0 2rem;
+			width: 90vw;
+			.name {
+				font-size: 0.9rem;
+			}
+			.title {
+				.line {
+					height: 3rem;
+					span {
+						font-size: 3rem;
+					}
+				}
+			}
+			.subtitle {
+				font-size: 1.2rem;
+				padding-top: 1.5rem;
+			}
+		}
+	}
 }

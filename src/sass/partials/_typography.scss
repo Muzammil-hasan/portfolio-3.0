@@ -1,164 +1,164 @@
 html {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 @media (max-width: 500px) {
-  html {
-    font-size: 11px;
-  }
+	html {
+		font-size: 11px;
+	}
 }
 @media (max-width: 360px) {
-  html {
-    font-size: 10px;
-  }
+	html {
+		font-size: 10px;
+	}
 }
 @media (max-width: 320px) {
-  html {
-    font-size: 9px;
-  }
+	html {
+		font-size: 9px;
+	}
 }
 
 @media (min-width: 500px) and (max-width: 1024px) {
-  html {
-    font-size: 14px;
-  }
+	html {
+		font-size: 14px;
+	}
 }
 
 @media (min-width: 1024px) and (max-width: 1300px) {
-  html {
-    font-size: 12px;
-  }
+	html {
+		font-size: 12px;
+	}
 }
 
 @media (min-width: 1300px) {
-  html {
-    font-size: 12.8px;
-  }
+	html {
+		font-size: 12.8px;
+	}
 }
 
 @media (min-width: 1900px) {
-  html {
-    font-size: 18px;
-  }
+	html {
+		font-size: 18px;
+	}
 }
 
 @media (min-width: 2500px) {
-  html {
-    font-size: 24px;
-  }
+	html {
+		font-size: 20px;
+	}
 }
 
 @media (min-width: 3800px) {
-  html {
-    font-size: 36px;
-  }
+	html {
+		font-size: 30px;
+	}
 }
 
 body {
-  font-family: $main-font;
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: $main-font;
+	font-weight: 400;
+	font-size: 1.2rem;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 // Headings
 
 h1,
 h2 {
-  font-weight: 400;
-  font-family: $main-font;
-  line-height: normal;
+	font-weight: 400;
+	font-family: $main-font;
+	line-height: normal;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
-  font-family: $sub-font;
-  line-height: normal;
+	font-weight: 500;
+	font-family: $sub-font;
+	line-height: normal;
 }
 
 h1,
 .h1 {
-  font-size: 4rem;
+	font-size: 4rem;
 }
 
 h2,
 .h2 {
-  font-size: 3rem;
+	font-size: 3rem;
 }
 
 h3,
 .h3 {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 h4,
 .h4 {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 h5,
 .h5 {
-  font-size: 1.2rem;
+	font-size: 1.2rem;
 }
 
 @media (max-width: $xs) {
-  h1,
-  .h1 {
-    font-size: 3rem;
-  }
+	h1,
+	.h1 {
+		font-size: 3rem;
+	}
 
-  h2,
-  .h2 {
-    font-size: 2.5rem;
-  }
+	h2,
+	.h2 {
+		font-size: 2.5rem;
+	}
 
-  h3,
-  .h3 {
-    font-size: 2rem;
-  }
+	h3,
+	.h3 {
+		font-size: 2rem;
+	}
 
-  h4,
-  .h4 {
-    font-size: 1.5rem;
-  }
+	h4,
+	.h4 {
+		font-size: 1.5rem;
+	}
 
-  h5,
-  .h5 {
-    font-size: 1.2rem;
-  }
+	h5,
+	.h5 {
+		font-size: 1.2rem;
+	}
 }
 
 // alignments
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .text-right {
-  text-align: right;
+	text-align: right;
 }
 
 .text-left {
-  text-align: left;
+	text-align: left;
 }
 
 // Modifiers
 .text-bold {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .text-semibold {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 .text-uppercase {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .no-line-height {
-  line-height: 1em !important;
+	line-height: 1em !important;
 }
