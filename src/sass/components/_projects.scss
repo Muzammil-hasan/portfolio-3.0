@@ -36,11 +36,11 @@
 		display: flex;
 
 		&.right {
-			margin-left: 35rem;
+			margin-left: 45rem;
 		}
 
 		img {
-			width: 35rem;
+			width: 25rem;
 			height: 25rem;
 			object-fit: cover;
 		}
@@ -54,17 +54,16 @@
 				left: -10rem;
 				font-weight: 700;
 				text-transform: lowercase;
-
 				&.right {
 					left: auto;
-					right: 64rem;
+					right: 53rem;
 				}
 			}
 			.type {
 				text-transform: uppercase;
 				position: absolute;
 				bottom: 3.5rem;
-				left: -37rem;
+				left: -27rem;
 				transform: rotate(90deg);
 				margin: 0;
 				line-height: 1.4rem;
