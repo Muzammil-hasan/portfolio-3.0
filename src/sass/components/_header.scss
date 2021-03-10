@@ -250,6 +250,9 @@
 			flex-direction: column;
 			justify-content: center;
 			li {
+				&:not(:last-child) {
+					margin-bottom: 1rem;
+				}
 				a {
 					svg {
 						width: 2.5rem;

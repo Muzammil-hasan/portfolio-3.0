@@ -32,16 +32,21 @@
 	.project-container {
 		position: relative;
 		width: 75%;
-		margin: 0 auto;
+		margin: 0;
+		margin-left: 20rem;
 		display: flex;
+
+		&:not(:last-child) {
+			margin-bottom: 20rem;
+		}
 
 		&.right {
 			margin-left: 45rem;
 		}
 
 		img {
-			width: 25rem;
-			height: 25rem;
+			width: $img-size;
+			height: $img-size;
 			object-fit: cover;
 		}
 		.text {
@@ -49,21 +54,23 @@
 			width: 50%;
 			h2 {
 				position: absolute;
-				top: 1rem;
-				font-size: 7.5rem;
+				top: 0rem;
+				font-size: 7rem;
 				left: -10rem;
 				font-weight: 700;
 				text-transform: lowercase;
+				letter-spacing: 0.1rem;
 				&.right {
 					left: auto;
-					right: 53rem;
+					right: 52.5rem;
+					top: -1rem;
 				}
 			}
 			.type {
 				text-transform: uppercase;
 				position: absolute;
 				bottom: 3.5rem;
-				left: -27rem;
+				left: -26rem;
 				transform: rotate(90deg);
 				margin: 0;
 				line-height: 1.4rem;
@@ -82,6 +89,7 @@
 				&.left {
 					top: 10rem;
 					left: 1rem;
+					width: 60%;
 				}
 				&.right {
 					left: 1rem;
@@ -140,9 +148,6 @@
 					transform: translateX(110%);
 				}
 			}
-		}
-		&:not(:last-child) {
-			margin-bottom: 15rem;
 		}
 	}
 }

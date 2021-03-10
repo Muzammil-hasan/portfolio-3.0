@@ -124,6 +124,12 @@ ul {
 	.scroll {
 		bottom: 8rem;
 	}
+	body {
+		.cursor,
+		.cursor-follower {
+			display: none;
+		}
+	}
 }
 
 .is-black {
