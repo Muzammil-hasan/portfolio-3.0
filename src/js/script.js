@@ -325,7 +325,7 @@ let scrollIndicator = document.querySelector(".scroll");
 
 let projectAnim = new TimelineMax({
 	scrollTrigger: {
-		trigger: ".projects",
+		trigger: ".about",
 		start: "top 10%",
 		onEnter: () => {
 			classForLightBg();
@@ -341,19 +341,6 @@ let projectAnim = new TimelineMax({
 		},
 		// markers: true,
 	},
-});
-
-gsap.to(".item img", {
-	scrollTrigger: {
-		trigger: ".item",
-		start: "top bottom",
-		// markers: true,
-	},
-	translateY: "0%",
-	opacity: 1,
-	scaleY: 1,
-	duration: 0.05,
-	ease: Expo.ease,
 });
 
 function classForLightBg() {
@@ -394,12 +381,3 @@ function classForDarktBg() {
 		scrollChar.classList.remove("is-black");
 	}
 }
-
-/* ##################################### */
-/*               Tilt Js                 */
-/* ##################################### */
-
-VanillaTilt.init(document.querySelectorAll(".item"), {
-	max: 25,
-	speed: 400,
-});
