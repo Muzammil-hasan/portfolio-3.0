@@ -8,7 +8,9 @@
 	justify-content: space-between;
 	align-items: center;
 	z-index: 1;
+	pointer-events: none;
 	.logo-wrapper {
+		pointer-events: auto;
 		a {
 			svg {
 				color: $color-main;
@@ -20,6 +22,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		pointer-events: auto;
 		a {
 			display: block;
 			text-transform: uppercase;
@@ -186,6 +189,7 @@
 		}
 	}
 	.main-nav {
+		pointer-events: auto;
 		padding-left: $page-padding;
 		display: flex;
 		position: absolute;
@@ -239,6 +243,7 @@
 		}
 	}
 	.social-links {
+		pointer-events: auto;
 		padding-right: $page-padding;
 		display: flex;
 		position: absolute;

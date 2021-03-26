@@ -1,15 +1,39 @@
 .projects {
-	height: 200vh;
+	height: auto;
 	background-color: $color-background;
-	padding: 20rem $page-padding;
+	padding: 15rem $page-padding;
 	position: relative;
+	overflow-x: hidden;
+	.sub-head {
+		margin: 0;
+		font-family: $sub-font;
+		text-transform: uppercase;
+		letter-spacing: 0.5rem;
+		font-size: 1.2rem;
+		transition: none;
+		color: $blue-color;
+	}
+	> h2 {
+		margin-bottom: 15rem;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		height: 4rem;
+		span {
+			position: absolute;
+			font-size: 4rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+
 	.projects-indicator {
 		position: absolute;
 		background-color: transparent;
 		font-family: $sub-font;
 		text-transform: uppercase;
 		left: 0;
-		top: 17%;
+		top: 45%;
 		z-index: inherit;
 		font-size: 0.9rem;
 		color: $color-main-lighter;
@@ -43,7 +67,6 @@
 		&.right {
 			margin-left: 45rem;
 		}
-
 		img {
 			width: $img-size;
 			height: $img-size;

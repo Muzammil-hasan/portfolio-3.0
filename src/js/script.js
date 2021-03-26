@@ -108,11 +108,9 @@ hamburger.addEventListener("click", () => {
 	for (const char of chars) {
 		if (hamburger.classList.contains("is-active")) {
 			char.classList.add("is-black");
-
 			cta.classList.add("black");
 		} else if (!hamburger.classList.contains("is-active")) {
 			char.classList.remove("is-black");
-
 			cta.classList.remove("black");
 		}
 	}
@@ -312,7 +310,7 @@ ctaElements.forEach((element) => {
 });
 
 /* ##################################### */
-/*      Projects Section Animations      */
+/*        About Section Animations       */
 /* ##################################### */
 
 let lines = document.querySelectorAll(".hamburger .line");
@@ -323,7 +321,9 @@ let scrollChars = document.querySelectorAll(".scroll .char");
 
 let scrollIndicator = document.querySelector(".scroll");
 
-let projectAnim = new TimelineMax({
+let subHeadChars = document.querySelectorAll(".sub-head .char");
+
+let aboutAnim = new TimelineMax({
 	scrollTrigger: {
 		trigger: ".about",
 		start: "top 10%",
@@ -381,3 +381,30 @@ function classForDarktBg() {
 		scrollChar.classList.remove("is-black");
 	}
 }
+
+/* ##################################### */
+/*      Projects Section Animations      */
+/* ##################################### */
+
+gsap.from(subHeadChars, {
+	scrollTrigger: {
+		trigger: ".projects",
+		start: "top 70%",
+	},
+	x: -60,
+	duration: 1,
+	opacity: 0,
+	ease: "elastic.out(1, 0.5)",
+	stagger: 0.05,
+});
+
+gsap.from(".projects > h2 span", {
+	scrollTrigger: {
+		trigger: ".projects",
+		start: "top 70%",
+	},
+	y: 600,
+	duration: 1,
+	ease: "power3.out",
+	skewY: 50,
+});
