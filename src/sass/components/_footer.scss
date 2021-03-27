@@ -18,6 +18,11 @@ footer {
 		p {
 			color: #fff;
 			font-family: $sub-font;
+			span {
+				svg {
+					width: 1rem;
+				}
+			}
 		}
 	}
 	.contact {

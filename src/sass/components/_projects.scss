@@ -12,12 +12,14 @@
 		font-size: 1.2rem;
 		transition: none;
 		color: $blue-color;
+		padding-left: 5rem;
 	}
 	> h2 {
 		margin-bottom: 15rem;
 		position: relative;
 		width: 100%;
 		overflow: hidden;
+		padding-left: 5rem;
 		height: 4rem;
 		span {
 			position: absolute;
@@ -126,10 +128,10 @@
 				bottom: -0.5rem;
 				left: 0;
 				padding-left: 1rem;
-				font-family: $sub-font;
-				letter-spacing: 0.2rem;
+				font-family: $main-font;
+				letter-spacing: 0.25rem;
 				font-weight: 700;
-				font-size: 1rem;
+				font-size: 1.1rem;
 			}
 			.slide-horizontal {
 				.char {

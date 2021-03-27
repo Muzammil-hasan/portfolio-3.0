@@ -293,7 +293,7 @@ heroAnim
 ctaElements.forEach((element) => {
 	element.addEventListener("mouseover", () => {
 		gsap.to(ellipse, {
-			width: "14.5rem",
+			width: "15rem",
 			duration: 0.05,
 			ease: Power1.easeIn,
 		});
