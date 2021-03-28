@@ -342,38 +342,38 @@ let aboutAnim = new TimelineMax({
 });
 
 function classForLightBg() {
-	for (const char of chars) {
-		char.classList.add("is-black");
-	}
+	// for (const char of chars) {
+	// 	char.classList.add("is-black");
+	// }
 
-	hamburger.classList.add("bg-black");
+	// hamburger.classList.add("bg-black");
 
-	cta.classList.add("black");
+	// cta.classList.add("black");
+
+	// logoSVG.classList.add("color-black");
+
+	// onAboutSection = true;
 
 	for (const line of lines) {
 		line.classList.add("bg-white");
 	}
-
-	logoSVG.classList.add("color-black");
-
-	onAboutSection = true;
 }
 function classForDarktBg() {
-	hamburger.classList.remove("bg-black");
+	// hamburger.classList.remove("bg-black");
 
-	cta.classList.remove("black");
+	// cta.classList.remove("black");
+
+	// for (const char of chars) {
+	// 	char.classList.remove("is-black");
+	// }
+
+	// logoSVG.classList.remove("color-black");
+
+	// onAboutSection = false;
 
 	for (const line of lines) {
 		line.classList.remove("bg-white");
 	}
-
-	for (const char of chars) {
-		char.classList.remove("is-black");
-	}
-
-	logoSVG.classList.remove("color-black");
-
-	onAboutSection = false;
 }
 
 /* ##################################### */
