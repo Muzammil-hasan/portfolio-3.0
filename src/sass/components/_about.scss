@@ -9,11 +9,8 @@
 
 	.content {
 		h2 {
-			text-transform: capitalize;
-			font-size: 5rem;
 			color: $color-main;
 			font-weight: 700;
-			letter-spacing: 0.1rem;
 			margin: 0;
 			font-family: $sub-font;
 			text-transform: uppercase;
@@ -27,6 +24,33 @@
 			font-weight: 700;
 			font-size: 2.2rem;
 			line-height: 5rem;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.about {
+		height: auto;
+
+		.content {
+			padding: 20rem 0;
+
+			h2 {
+				margin: 0;
+				text-transform: uppercase;
+				letter-spacing: 0.5rem;
+				font-size: 1.2rem;
+				padding: 0rem 0.3rem;
+				padding-top: 5rem;
+				transition: none;
+			}
+
+			p {
+				padding: 2rem 1.5rem 0;
+				font-weight: 700;
+				font-size: 2rem;
+				line-height: 3.2rem;
+			}
 		}
 	}
 }

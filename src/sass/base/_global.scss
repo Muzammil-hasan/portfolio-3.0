@@ -137,6 +137,12 @@ ul {
 @media (max-width: 500px) {
 	.scroll {
 		bottom: 8rem;
+		right: -0.5rem;
+	}
+	html {
+		::-webkit-scrollbar {
+			display: none;
+		}
 	}
 	body {
 		.cursor,

@@ -19,7 +19,7 @@
 		position: relative;
 		width: 100%;
 		overflow: hidden;
-		padding-left: 5rem;
+		padding-left: 7rem;
 		height: 4rem;
 		span {
 			position: absolute;
@@ -171,6 +171,100 @@
 				}
 				&:hover .char:after {
 					transform: translateX(110%);
+				}
+			}
+		}
+	}
+}
+
+// @media (max-width: 3840px) and (min-width: 2560px) {
+// 	.hero {
+// 		.content {
+// 			padding-top: 15rem;
+// 			padding-left: 15rem;
+// 		}
+// 	}
+// }
+
+// @media (width: 2560px) and (height: 1600px) {
+// 	.hero {
+// 		.content {
+// 			padding-top: 20rem;
+// 		}
+// 	}
+// }
+
+@media (max-width: 500px) {
+	.projects {
+		.sub-head {
+			font-size: 0.9rem;
+			padding-left: 0rem;
+		}
+
+		> h2 {
+			padding-left: 2rem;
+			height: 2.5rem;
+			span {
+				font-size: 2.5rem;
+			}
+		}
+		.projects-indicator {
+			display: none;
+		}
+
+		.project-container {
+			margin-left: 5rem;
+
+			img {
+				width: 17rem;
+				height: 17rem;
+			}
+
+			.text {
+				h2 {
+					left: -5rem;
+					font-size: 3rem;
+				}
+
+				.description {
+					&.left {
+						top: 5rem;
+						left: 1rem;
+						font-size: 0.9rem;
+					}
+				}
+
+				.type {
+					bottom: 3rem;
+					left: -17rem;
+					line-height: 0.8rem;
+					font-size: 0.5rem;
+				}
+
+				a {
+					font-size: 0.9rem;
+					letter-spacing: 0rem;
+				}
+			}
+
+			&.loopstudio {
+				.text {
+					h2 {
+						left: -8rem;
+					}
+
+					.type {
+						left: -19rem;
+					}
+				}
+			}
+
+			&.right {
+				margin-left: 5rem;
+
+				h2 {
+					left: 20rem;
+					top: 0rem;
 				}
 			}
 		}
