@@ -319,6 +319,8 @@ let logoSVG = document.querySelector(".logo-wrapper a svg");
 
 let subHeadChars = document.querySelectorAll(".sub-head .char");
 
+let scrollIndicator = document.querySelector(".scroll");
+
 let onAboutSection = false;
 
 let aboutAnim = new TimelineMax({
