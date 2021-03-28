@@ -50,7 +50,7 @@ body {
 
 .cursor {
 	position: absolute;
-	background: $blue-color;
+	background: $secondary-color;
 	width: 6px;
 	height: 6px;
 	border-radius: 100%;
@@ -119,6 +119,21 @@ ul {
 	padding: 0;
 }
 
+/* width */
+::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 1.5rem 1.5rem $color-background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $color-main;
+}
+
 @media (max-width: 500px) {
 	.scroll {
 		bottom: 8rem;
@@ -129,23 +144,4 @@ ul {
 			display: none;
 		}
 	}
-}
-
-.is-black {
-	&::after,
-	&::before {
-		color: $color-background !important;
-	}
-}
-.black::after {
-	background-color: $color-background !important;
-}
-.bg-black {
-	background-color: $color-background !important;
-}
-.bg-white {
-	background-color: $color-main !important;
-}
-.color-black {
-	color: $color-background !important;
 }

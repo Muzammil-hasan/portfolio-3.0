@@ -1,0 +1,18 @@
+.is-black {
+	&::after,
+	&::before {
+		color: $color-background !important;
+	}
+}
+.black::after {
+	background-color: $color-background !important;
+}
+.bg-black {
+	background-color: $color-background !important;
+}
+.bg-white {
+	background-color: $secondary-color !important;
+}
+.color-black {
+	color: $color-background !important;
+}

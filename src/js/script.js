@@ -109,7 +109,7 @@ hamburger.addEventListener("click", () => {
 		if (hamburger.classList.contains("is-active")) {
 			char.classList.add("is-black");
 			cta.classList.add("black");
-		} else if (!hamburger.classList.contains("is-active")) {
+		} else if (!onAboutSection === true) {
 			char.classList.remove("is-black");
 			cta.classList.remove("black");
 		}
@@ -317,11 +317,9 @@ let lines = document.querySelectorAll(".hamburger .line");
 
 let logoSVG = document.querySelector(".logo-wrapper a svg");
 
-let scrollChars = document.querySelectorAll(".scroll .char");
-
-let scrollIndicator = document.querySelector(".scroll");
-
 let subHeadChars = document.querySelectorAll(".sub-head .char");
+
+let onAboutSection = false;
 
 let aboutAnim = new TimelineMax({
 	scrollTrigger: {
@@ -358,9 +356,7 @@ function classForLightBg() {
 
 	logoSVG.classList.add("color-black");
 
-	for (const scrollChar of scrollChars) {
-		scrollChar.classList.add("is-black");
-	}
+	onAboutSection = true;
 }
 function classForDarktBg() {
 	hamburger.classList.remove("bg-black");
@@ -377,9 +373,7 @@ function classForDarktBg() {
 
 	logoSVG.classList.remove("color-black");
 
-	for (const scrollChar of scrollChars) {
-		scrollChar.classList.remove("is-black");
-	}
+	onAboutSection = false;
 }
 
 /* ##################################### */
