@@ -354,14 +354,11 @@ function classForLightBg() {
 	for (const line of lines) {
 		line.classList.add("bg-white");
 	}
-
-	// scrollIndicator.style.opacity = "0";
 }
 function classForDarktBg() {
 	for (const line of lines) {
 		line.classList.remove("bg-white");
 	}
-	// scrollIndicator.style.opacity = "1";
 }
 
 aboutAnim.to(".scroll", {
@@ -372,25 +369,38 @@ aboutAnim.to(".scroll", {
 let aboutAnim2 = new TimelineMax({
 	scrollTrigger: {
 		trigger: ".about",
-		start: "top bottom",
-		// markers: true,
+		start: "top 80%",
 	},
 });
 
 aboutAnim2
 	.from(".about", {
-		xPercent: -50,
-		duration: 1.2,
-		ease: "bounce.out",
+		xPercent: -500,
+		duration: 1.5,
+		ease: Power1.out,
 		opacity: 0,
 	})
-	.from(aboutChars, {
-		xPercent: -60,
-		duration: 2,
-		opacity: 0,
-		ease: "elastic.out(1, 0.3)",
-		stagger: 0.05,
-	});
+	.from(
+		aboutChars,
+		{
+			xPercent: -60,
+			duration: 1.5,
+			opacity: 0,
+			ease: "elastic.out(1, 0.3)",
+			stagger: 0.05,
+		},
+		"content"
+	)
+	.from(
+		".about p",
+		{
+			y: -60,
+			duration: 0.8,
+			opacity: 0,
+			ease: Power2.easeOut,
+		},
+		"content"
+	);
 
 /* ##################################### */
 /*      Projects Section Animations      */
@@ -417,11 +427,11 @@ projectTl
 		".projects > h2 span",
 		{
 			y: 600,
-			duration: 1,
+			duration: 0.8,
 			ease: "power3.out",
 			skewY: 50,
 		},
-		"-=1"
+		"-=.8"
 	);
 
 /* ##################################### */
