@@ -185,25 +185,12 @@ document.addEventListener("mousemove", function (e) {
 });
 
 /* ##################################### */
-/*          Global ANimation             */
-/* ##################################### */
-
-gsap.from(".scroll .char", {
-	xPercent: -60,
-	duration: 1,
-	delay: 2,
-	opacity: 0,
-	ease: "elastic.out(1, 0.5)",
-	stagger: 0.03,
-});
-
-/* ##################################### */
 /*           Header Animations           */
 /* ##################################### */
 
 gsap.from(".header", {
 	yPercent: -250,
-	duration: 2,
+	duration: 1.5,
 	delay: 1,
 	stagger: 0.5,
 	ease: Expo.easeOut,
@@ -310,18 +297,37 @@ ctaElements.forEach((element) => {
 });
 
 /* ##################################### */
+/*          Scroll Indicator             */
+/* ##################################### */
+
+let scrollIndicator = document.querySelector(".scroll");
+
+gsap.from(".scroll .char", {
+	xPercent: -60,
+	duration: 1,
+	delay: 2,
+	opacity: 0,
+	ease: "elastic.out(1, 0.5)",
+	stagger: 0.03,
+});
+
+gsap.to(scrollIndicator, {
+	scrollTrigger: {
+		trigger: ".projects",
+		start: "top center",
+		toggleActions: "restart none none reverse",
+	},
+	opacity: 0,
+	duration: 0.25,
+});
+
+/* ##################################### */
 /*        About Section Animations       */
 /* ##################################### */
 
 let lines = document.querySelectorAll(".hamburger .line");
 
-let logoSVG = document.querySelector(".logo-wrapper a svg");
-
-let subHeadChars = document.querySelectorAll(".sub-head .char");
-
-let scrollIndicator = document.querySelector(".scroll");
-
-let onAboutSection = false;
+let aboutChars = document.querySelectorAll(".about h2 .char");
 
 let aboutAnim = new TimelineMax({
 	scrollTrigger: {
@@ -340,67 +346,94 @@ let aboutAnim = new TimelineMax({
 			classForDarktBg();
 		},
 		// markers: true,
+		stagger: true,
 	},
 });
 
 function classForLightBg() {
-	// for (const char of chars) {
-	// 	char.classList.add("is-black");
-	// }
-
-	// hamburger.classList.add("bg-black");
-
-	// cta.classList.add("black");
-
-	// logoSVG.classList.add("color-black");
-
-	// onAboutSection = true;
-
 	for (const line of lines) {
 		line.classList.add("bg-white");
 	}
+
+	// scrollIndicator.style.opacity = "0";
 }
 function classForDarktBg() {
-	// hamburger.classList.remove("bg-black");
-
-	// cta.classList.remove("black");
-
-	// for (const char of chars) {
-	// 	char.classList.remove("is-black");
-	// }
-
-	// logoSVG.classList.remove("color-black");
-
-	// onAboutSection = false;
-
 	for (const line of lines) {
 		line.classList.remove("bg-white");
 	}
+	// scrollIndicator.style.opacity = "1";
 }
+
+aboutAnim.to(".scroll", {
+	opacity: 0,
+	ease: Power4.in,
+});
+
+let aboutAnim2 = new TimelineMax({
+	scrollTrigger: {
+		trigger: ".about",
+		start: "top bottom",
+		// markers: true,
+	},
+});
+
+aboutAnim2
+	.from(".about", {
+		xPercent: -50,
+		duration: 1.2,
+		ease: "bounce.out",
+		opacity: 0,
+	})
+	.from(aboutChars, {
+		xPercent: -60,
+		duration: 2,
+		opacity: 0,
+		ease: "elastic.out(1, 0.3)",
+		stagger: 0.05,
+	});
 
 /* ##################################### */
 /*      Projects Section Animations      */
 /* ##################################### */
 
-gsap.from(subHeadChars, {
+let subHeadChars = document.querySelectorAll(".sub-head .char");
+
+let projectTl = new TimelineMax({
 	scrollTrigger: {
 		trigger: ".projects",
 		start: "top 70%",
 	},
-	x: -60,
-	duration: 1,
-	opacity: 0,
-	ease: "elastic.out(1, 0.5)",
-	stagger: 0.05,
 });
 
-gsap.from(".projects > h2 span", {
+projectTl
+	.from(subHeadChars, {
+		x: -60,
+		duration: 1,
+		opacity: 0,
+		ease: "elastic.out(1, 0.5)",
+		stagger: 0.05,
+	})
+	.from(
+		".projects > h2 span",
+		{
+			y: 600,
+			duration: 1,
+			ease: "power3.out",
+			skewY: 50,
+		},
+		"-=1"
+	);
+
+/* ##################################### */
+/*           Lofo Animations             */
+/* ##################################### */
+
+gsap.to(".header .logo-wrapper", {
 	scrollTrigger: {
-		trigger: ".projects",
-		start: "top 70%",
+		trigger: ".foot",
+		start: "top 10%",
+		toggleActions: "restart none none reverse",
 	},
-	y: 600,
-	duration: 1,
-	ease: "power3.out",
-	skewY: 50,
+	opacity: 0,
+	duration: 0.25,
 });
