@@ -425,7 +425,7 @@ projectTl
 	);
 
 /* ##################################### */
-/*           Lofo Animations             */
+/*           Logo Animations             */
 /* ##################################### */
 
 gsap.to(".header .logo-wrapper", {
