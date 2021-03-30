@@ -109,7 +109,7 @@ hamburger.addEventListener("click", () => {
 		if (hamburger.classList.contains("is-active")) {
 			char.classList.add("is-black");
 			cta.classList.add("black");
-		} else if (!onAboutSection === true) {
+		} else if (!hamburger.classList.contains("is-active")) {
 			char.classList.remove("is-black");
 			cta.classList.remove("black");
 		}
@@ -333,6 +333,7 @@ let aboutAnim = new TimelineMax({
 	scrollTrigger: {
 		trigger: ".about",
 		start: "top 10%",
+		end: "bottom 10%",
 		onEnter: () => {
 			classForLightBg();
 		},
@@ -345,7 +346,6 @@ let aboutAnim = new TimelineMax({
 		onLeaveBack: () => {
 			classForDarktBg();
 		},
-		// markers: true,
 		stagger: true,
 	},
 });
@@ -369,14 +369,14 @@ aboutAnim.to(".scroll", {
 let aboutAnim2 = new TimelineMax({
 	scrollTrigger: {
 		trigger: ".about",
-		start: "top 80%",
+		start: "top 85%",
 	},
 });
 
 aboutAnim2
 	.from(".about", {
 		xPercent: -500,
-		duration: 1.5,
+		duration: 1.2,
 		ease: Power1.out,
 		opacity: 0,
 	})

@@ -177,25 +177,10 @@
 	}
 }
 
-// @media (max-width: 3840px) and (min-width: 2560px) {
-// 	.hero {
-// 		.content {
-// 			padding-top: 15rem;
-// 			padding-left: 15rem;
-// 		}
-// 	}
-// }
-
-// @media (width: 2560px) and (height: 1600px) {
-// 	.hero {
-// 		.content {
-// 			padding-top: 20rem;
-// 		}
-// 	}
-// }
-
 @media (max-width: 500px) {
 	.projects {
+		padding: 0rem $page-padding 10rem;
+
 		.sub-head {
 			font-size: 0.9rem;
 			padding-left: 0rem;

@@ -1,6 +1,6 @@
 .foot {
 	background-color: #000;
-	height: 100vh;
+	height: 50vh;
 	padding: 0 $page-padding;
 	position: relative;
 	display: flex;
@@ -63,15 +63,46 @@
 			}
 		}
 	}
+
+	.back-to-top {
+		display: flex;
+		width: 8.7rem;
+		margin-bottom: -4.2rem;
+		margin-left: 10rem;
+		border-bottom: 1px solid $color-main;
+		transition: 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+		opacity: 0.8;
+
+		a {
+			font-weight: 400;
+			text-transform: capitalize;
+			color: $color-main;
+			font-family: $sub-font;
+			position: relative;
+		}
+
+		svg {
+			width: 1rem;
+			padding-left: 0.4rem;
+
+			fill: $color-main;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 @media (max-width: 768px) {
-	footer {
+	.foot {
 		flex-direction: column;
 		height: auto;
+		padding: 5rem $page-padding;
 		.contact {
 			padding: 0;
 			padding-bottom: 3rem;
 			text-align: center;
+			margin-left: 0;
 			h5 {
 				font-size: 2.25rem;
 			}
@@ -79,6 +110,10 @@
 		.logo-wrapper {
 			padding-bottom: 3rem;
 			text-align: center;
+		}
+
+		.back-to-top {
+			margin: 0;
 		}
 	}
 }
