@@ -447,3 +447,42 @@ gsap.to(".header .logo-wrapper", {
 	opacity: 0,
 	duration: 0.25,
 });
+
+/* ##################################### */
+/*          Scroll To Animations         */
+/* ##################################### */
+
+let navLinks = document.querySelectorAll(".main-nav ul li a");
+
+let ctaLink = document.querySelector(".cta a");
+
+let backToTop = document.querySelector(".back-to-top a");
+
+let anchorlinks = [...navLinks, ctaLink, backToTop];
+
+for (const link of anchorlinks) {
+	let section = document.querySelector(`#${link.href.split("#")[1]}`);
+	link.addEventListener("click", (e) => {
+		if (section !== null) {
+			e.preventDefault();
+		}
+		gsap.to(window, {
+			scrollTo: {
+				y: section,
+				offsetY: 150,
+			},
+			duration: 1,
+			ease: "power4.inOut",
+		});
+	});
+
+	link.addEventListener("click", (e) => {
+		menuTl.reverse();
+		for (const char of chars) {
+			char.classList.remove("is-black");
+			cta.classList.remove("black");
+		}
+		hamburger.classList.remove("is-active");
+		TweenLite.to(menuTl, 1.5, { progress: 0, ease: "Power2.easeOut" });
+	});
+}
